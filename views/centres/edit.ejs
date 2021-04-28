@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Centre</title>
+  </head>
+  <body>
+    <h1>Edit Centre</h1>
+    <form action="/centres/<%= centre._id %>?_method=PUT" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="centre[name]"
+          value="<%= centre.name %> "
+        />
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          name="centre[description]"
+          value="<%= centre.description %> "
+        />
+      </div>
+      <div>
+        <label for="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="centre[location]"
+          value="<%= centre.location %> "
+        />
+      </div>
+      <button>Update Centre</button>
+    </form>
+    <a href="/centres/<%= centre._id %> ">Back To Centre</a>
+  </body>
+</html>
