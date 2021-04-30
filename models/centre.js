@@ -14,6 +14,7 @@ var centreSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    image: String,
   },
   { timestamps: true }
 );

@@ -1,43 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Centre</title>
-  </head>
-  <body>
-    <h1>Edit Centre</h1>
+<% layout('layouts/boilerplate') -%>
+
+<div class="row">
+  <h1 class="text-center">Edit Centre</h1>
+  <div class="col-6 offset-3">
     <form action="/centres/<%= centre._id %>?_method=PUT" method="POST">
-      <div>
-        <label for="name">Name</label>
+      <div class="mb-3">
+        <label class="form-label" for="name">Name</label>
         <input
+          class="form-control"
           type="text"
           id="name"
           name="centre[name]"
           value="<%= centre.name %> "
         />
       </div>
-      <div>
-        <label for="description">Description</label>
-        <input
+      <div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          class="form-control"
           type="text"
           id="description"
           name="centre[description]"
-          value="<%= centre.description %> "
-        />
+        >
+<%= centre.description %></textarea
+        >
       </div>
-      <div>
-        <label for="location">Location</label>
+      <div class="mb-3">
+        <label class="form-label" for="location">Location</label>
         <input
+          class="form-control"
           type="text"
           id="location"
           name="centre[location]"
           value="<%= centre.location %> "
         />
       </div>
-      <button>Update Centre</button>
+      <div class="mb-3">
+        <label class="form-label" for="image">Image Url</label>
+        <input
+          class="form-control"
+          type="text"
+          id="image"
+          name="centre[image]"
+          value="<%= centre.image %> "
+        />
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-warning">Edit Centre</button>
+      </div>
     </form>
     <a href="/centres/<%= centre._id %> ">Back To Centre</a>
-  </body>
-</html>
+  </div>
+</div>
